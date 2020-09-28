@@ -1,0 +1,29 @@
+[{
+  "id": "turris",
+  "url": "https://project.turris.cz/greylist-data/greylist-latest.csv",
+  "parser": "turris_csv",
+  "prefix": "turris_greylist",
+  "description": "Based on a list of IPs from Project:Turris Greylist https://project.turris.cz/en/greylist",
+  "export": "addresslist"
+}, {
+  "id": "sentinel",
+  "url": "https://view.sentinel.turris.cz/greylist-data/greylist-latest.csv",
+  "parser": "sentinel_csv",
+  "prefix": "turris_sentinel",
+  "description": "Based on a list of IPs from Turris Sentinel https://view.sentinel.turris.cz/",
+  "export": "addresslist"
+}, {
+  "id": "feodotracker",
+  "url": "https://feodotracker.abuse.ch/downloads/ipblocklist_recommended.txt",
+  "parser": "simple_textfile",
+  "prefix": "feodo_tracker_c2",
+  "description": "Based on a list of IPs from Feodo Tracker Botnet C2 https://feodotracker.abuse.ch",
+  "export": "addresslist"
+}, {
+  "id": "malc0de",
+  "url": "http://malc0de.com/bl/IP_Blacklist.txt",
+  "parser": "simple_textfile",
+  "prefix": "malc0de_tracker",
+  "description": "Based on a list of IPs from malc0de http://malc0de.com",
+  "export": "addresslist"
+}]
