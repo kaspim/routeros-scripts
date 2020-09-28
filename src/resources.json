@@ -10,7 +10,7 @@
   "url": "https://view.sentinel.turris.cz/greylist-data/greylist-latest.csv",
   "parser": "sentinel_csv",
   "prefix": "turris_sentinel",
-  "description": "Based on a list of IPs from Turris Sentinel https://view.sentinel.turris.cz/",
+  "description": "Based on a list of IPs from Turris Sentinel https://view.sentinel.turris.cz",
   "export": "addresslist"
 }, {
   "id": "feodotracker",
@@ -25,5 +25,12 @@
   "parser": "simple_textfile",
   "prefix": "malc0de_tracker",
   "description": "Based on a list of IPs from malc0de http://malc0de.com",
+  "export": "addresslist"
+}, {
+  "id": "torexits",
+  "url": "https://check.torproject.org/exit-addresses",
+  "parser": "tor_exits",
+  "prefix": "tor_exits",
+  "description": "Based on a list of IPs from Tor Project https://www.torproject.org",
   "export": "addresslist"
 }]

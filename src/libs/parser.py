@@ -63,6 +63,21 @@ class Parser:
         return list if len(list) > 0 else False
 
 
+    def __as_tor_exits(self, data):
+        list = {}
+        for row in data.split('\n'):
+            cols = row.split(' ')
+            if 1 < len(cols):
+                ipv = ipversion(cols[1])
+                if ipv != False:
+                    if ipv not in list:
+                        list[ipv] = {}
+                        list[ipv]['all'] = []
+                    list[ipv]['all'].append(cols[1])
+
+        return list if len(list) > 0 else False
+
+
     def __download(self, url):
         http = urllib3.PoolManager()
         resp = http.request('GET', url)
@@ -80,6 +95,8 @@ class Parser:
                 return self.__as_sentinel_csv(self.__data)
             elif self.__resource['parser'] == 'simple_textfile':
                 return self.__as_simple_textfile(self.__data)
+            elif self.__resource['parser'] == 'tor_exits':
+                return self.__as_tor_exits(self.__data)
             else:
                 return None
         else:
