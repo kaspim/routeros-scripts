@@ -68,7 +68,7 @@ class Parser:
         for row in data.split('\n'):
             cols = row.split(' ')
             if 1 < len(cols):
-                version = IPaddress(row).version()
+                version = IPaddress(cols[1]).version()
                 if version != False:
                     if version not in list:
                         list[version] = {}
