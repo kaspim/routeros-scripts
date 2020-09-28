@@ -68,12 +68,12 @@ class Parser:
         for row in data.split('\n'):
             cols = row.split(' ')
             if 1 < len(cols):
-                ipv = ipversion(cols[1])
-                if ipv != False:
-                    if ipv not in list:
-                        list[ipv] = {}
-                        list[ipv]['all'] = []
-                    list[ipv]['all'].append(cols[1])
+                version = IPaddress(row).version()
+                if version != False:
+                    if version not in list:
+                        list[version] = {}
+                        list[version]['all'] = []
+                    list[version]['all'].append(cols[1])
 
         return list if len(list) > 0 else False
 
